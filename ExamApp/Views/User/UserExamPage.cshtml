@@ -1,0 +1,24 @@
+﻿@model List<ExamApp.Models.Exam>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">BAŞLIK</th>
+            <th scope="col">TARİH</th>
+            <th scope="col"> </th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < @Model.Count; i++)
+        {
+            <tr>
+                <th>@i+1</th>
+                <td>@Model[i].Title</td>
+                <td>@Model[i].CreatedDate</td>
+                <td> <div class="btn btn-danger">Sil</div></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

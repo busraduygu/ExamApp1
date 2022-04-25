@@ -1,0 +1,455 @@
+﻿@model ExamApp.Models.MultiModel
+
+@addTagHelper*,Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Create Exam";
+}
+<div class="card">
+    <div class="card-body">
+        <div class="dropdown">
+
+            @*<button class="btn dropdown-toggle title" type="button" data-toggle="dropdown">
+                    Lütfen Bir Başlık Seçiniz...
+                </button>*@
+
+            <select class="col-12 custom-select" id="question-titles">
+                <option value="null">Seçiniz...</option>
+                @foreach (var item in @Model.Datas)
+                {
+                    <option value="@item.Id">@item.Title</option>
+                }
+            </select>
+
+            @*<div class="col-12 dropdown-menu" id="question-titles">
+                    @foreach (var item in @Model.Datas)
+                    {
+                        <a class="dropdown-item question-title" href="javascript:;" data-question-id="@item.Id">@item.Title</a>
+                    }
+                </div>*@
+        </div>
+    </div>
+</div>
+<div class="card">
+    <div class="card-body" id="question-text" name="Text">
+
+    </div>
+</div>
+
+<form class="form-group" id="exam-form">
+
+    <div class="question">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <label>Soru 1</label>
+                        <input type="text" class="form-control" placeholder="Soru 1" name="question">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row answers">
+            <div class="col-12">
+                <div class="d-flex justify-content-between">
+                    <div class="card">
+                        <div class="card-body">
+                            <label>A</label>
+                            <input type="text" class="form-control" name="answer">
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <label>B</label>
+                            <input type="text" class="form-control" name="answer">
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <label>C</label>
+                            <input type="text" class="form-control" name="answer">
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <label>D</label>
+                            <input type="text" class="form-control" name="answer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex justify-content-center">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="dropdown">
+                                <select class="form-select" name="correct-answer">
+                                    <option value="null" selected>Doğru Cevabı Seçiniz.</option>
+                                    <option value="1">A</option>
+                                    <option value="2">B</option>
+                                    <option value="3">C</option>
+                                    <option value="4">D</option>
+                                </select>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="question">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <label>Soru 2</label>
+                        <input type="text" class="form-control" name="question">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row answers">
+            <div class="col-12">
+                <div class="d-flex justify-content-between">
+                    <div class="card">
+                        <div class="card-body">
+                            <label>A</label>
+                            <input type="text" class="form-control" name="answer">
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <label>B</label>
+                            <input type="text" class="form-control" name="answer">
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <label>C</label>
+                            <input type="text" class="form-control" name="answer">
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <label>D</label>
+                            <input type="text" class="form-control" name="answer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex justify-content-center">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="dropdown">
+                                <select class="form-select">
+                                    <option value="null" selected>Doğru Cevabı Seçiniz.</option>
+                                    <option value="1">A</option>
+                                    <option value="2">B</option>
+                                    <option value="3">C</option>
+                                    <option value="4">D</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="question">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <label>Soru 3</label>
+                        <input type="text" class="form-control" name="question">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row answers">
+            <div class="col-12">
+                <div class="d-flex justify-content-between">
+                    <div class="card">
+                        <div class="card-body">
+                            <label>A</label>
+                            <input type="text" class="form-control" name="answer">
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <label>B</label>
+                            <input type="text" class="form-control" name="answer">
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <label>C</label>
+                            <input type="text" class="form-control" name="answer">
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <label>D</label>
+                            <input type="text" class="form-control" name="answer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex justify-content-center">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="dropdown">
+                                <select class="form-select">
+                                    <option value="null" selected>Doğru Cevabı Seçiniz.</option>
+                                    <option value="1">A</option>
+                                    <option value="2">B</option>
+                                    <option value="3">C</option>
+                                    <option value="4">D</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="question">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <label>Soru 4</label>
+                        <input type="text" class="form-control" name="question">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row answers">
+            <div class="col-12">
+                <div class="d-flex justify-content-between">
+                    <div class="card">
+                        <div class="card-body">
+                            <label>A</label>
+                            <input type="text" class="form-control" name="answer">
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <label>B</label>
+                            <input type="text" class="form-control" name="answer">
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <label>C</label>
+                            <input type="text" class="form-control" name="answer">
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <label>D</label>
+                            <input type="text" class="form-control" name="answer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex justify-content-center">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="dropdown">
+                                <select class="form-select">
+                                    <option value="null" selected>Doğru Cevabı Seçiniz.</option>
+                                    <option value="1">A</option>
+                                    <option value="2">B</option>
+                                    <option value="3">C</option>
+                                    <option value="4">D</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="question">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <label>Soru 5</label>
+                        <input type="text" class="form-control" name="question">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row answers">
+            <div class="col-12">
+                <div class="d-flex justify-content-between">
+                    <div class="card">
+                        <div class="card-body">
+                            <label>A</label>
+                            <input type="text" class="form-control" name="answer">
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <label>B</label>
+                            <input type="text" class="form-control" name="answer">
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <label>C</label>
+                            <input type="text" class="form-control" name="answer">
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <label>D</label>
+                            <input type="text" class="form-control" name="answer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex justify-content-center">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="dropdown">
+                                <select class="form-select">
+                                    <option value="null" selected>Doğru Cevabı Seçiniz.</option>
+                                    <option value="1">A</option>
+                                    <option value="2">B</option>
+                                    <option value="3">C</option>
+                                    <option value="4">D</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="save-exam d-flex justify-content-center">
+        <button type="submit" class="btn btn-success" id="save-button">Sınav Oluştur</button>
+    </div>
+
+</form>
+
+
+@section Scripts{
+    <script>
+        //Title id'si ile ilgili title'ın text'ini çekme
+        $(document).ready(function () {
+            //Dropdown chance 
+            $('#question-titles').change(function () {
+                var questionId = $(this).find('option:selected').val();
+                if (questionId == null) return;
+
+                $.ajax({
+                    url: `/admin/getQuestionText/${questionId}`,
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function (response) {
+                        $('#question-text').text(response.questionText);
+                    },
+                    error: function () {
+                        alert('Unexpected error ocurred!');
+                    }
+                });
+            });
+
+            $('#exam-form').submit(function (e) {
+                //varsayılan olarak postu engeller
+                e.preventDefault();
+
+                var examViewModel = {
+                    title: $('#question-titles').find('option:selected').text(),
+                    text: $('#question-text').text(),
+                };
+                debugger
+                var questions = [];
+                $('.question').each(function () {
+
+                    var questionText = $(this).find('input[name="question"]').val();
+                    var correctAnswerId = $(this).find('select[name="correct-answer"]').find('option:selected').val();
+                    var question = {
+                        text: questionText,
+                        rlt_correct_answer_id: correctAnswerId,
+                    }
+                    questions.push(question);
+                    debugger
+                    var answers = $(this).find('div .answers').find('input[name="answer"]');
+                    var options = [];
+                    $(answers).each(function () {
+                        var optionText = $('input[name="answer"]').val();
+                        var option = {
+                            text: optionText
+                        }
+
+                        options.push(option);
+                    });
+                    questions.options = options;
+                });
+
+                examViewModel.questions = questions;
+
+                $.ajax({
+                    url: '/Admin/AddExam',
+                    data: examViewModel,
+                    type: 'Post',
+                    dataType: 'json',
+                    success: function (response) {
+                        debugger;
+                    },
+                    error: function () {
+                        alert('Unexpected error ocurred!');
+                    }
+                });
+            });
+        });
+    </script>
+}
+
+
+<style>
+    .title {
+        width: 100%;
+        height: 100%;
+    }
+
+    .card {
+        padding: 0px;
+        margin: 0px;
+        margin-bottom: 5px;
+    }
+
+    .save-exam {
+        margin-top: 15px;
+        margin-bottom: 55px;
+    }
+
+    #question-text {
+        max-height: 500px;
+        overflow: auto;
+    }
+</style>
+
